@@ -48,7 +48,7 @@ class CPFValidator:
             return False
 
 
-cpf = CPFValidator("10888449950")
+cpf = CPFValidator()
 cpf. convert_cpf_to_strings()
 cpf.validate_first_digit_cpf()
 cpf.validate_second_digit_cpf()
