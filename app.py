@@ -14,7 +14,6 @@ class CPFValidator:
                 self.cpf[i] = int(self.cpf[i])
         except ValueError:
             print("Cpf with caracher invalid")
-        print(self.cpf)
 
     def validate_first_digit_cpf(self):
         self.first_digit_verificator = self.cpf[-2]
@@ -27,7 +26,6 @@ class CPFValidator:
             self.first_digit_verificator = 0
         else:
             self.first_digit_verificator = 11 - result
-        print(self.first_digit_verificator)
 
     def validate_second_digit_cpf(self):
         self.second_digit_verificator = self.cpf[len(self.cpf) - 1]
@@ -41,10 +39,17 @@ class CPFValidator:
             self.second_digit_verificator = 0
         else:
             self.second_digit_verificator = 11 - result
-        print(self.second_digit_verificator)
+
+    def check_true_cpf(self):
+        self.digits_verificator = self.cpf[-2:]
+        if self.first_digit_verificator == self.digits_verificator[0] and self.second_digit_verificator == self.digits_verificator[1]:
+            return True
+        else:
+            return False
 
 
-cpf = CPFValidator()
-print(cpf. convert_cpf_to_strings())
-print(cpf.validate_first_digit_cpf())
-print(cpf.validate_second_digit_cpf())
+cpf = CPFValidator("10888449950")
+cpf. convert_cpf_to_strings()
+cpf.validate_first_digit_cpf()
+cpf.validate_second_digit_cpf()
+print(cpf.check_true_cpf())
